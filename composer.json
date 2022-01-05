@@ -2,7 +2,7 @@
   "name": "asus/ajax-example",
   "autoload": {
     "psr-4": {
-      "src\\": "src/"
+      "src\\": "./"
     }
   },
   "authors": [

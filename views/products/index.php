@@ -7,16 +7,16 @@
 </form>
 <br>
 <table>
-    <thead>
-        <th>Product Name</th>
+    <tr>
+        <th>Product Title</th>
         <th>Product Description</th>
         <th>Product Price</th>
-    </thead>
+    </tr>
     <?php foreach ($products as $product) : ?>
         <tr>
-            <?php echo '<pre>';
-            var_dump($product);
-            echo '</pre>'; ?>
+            <td><?php echo $product["title"] ?></td>
+            <td><?php echo $product["description"] ?? "none" ?></td>
+            <td><?php echo "Tk" . number_format($product["price"], 1) ?></td>
         </tr>
     <?php endforeach; ?>
 </table>

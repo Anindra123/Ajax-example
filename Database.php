@@ -11,14 +11,13 @@ class Database
     private static Database $db;
     private function __construct()
     {
-        $this->pdo = new PDO("mysql:localhost;port:3306;db_name=products_db", "root", "");
+        $this->pdo = new PDO('mysql:host=localhost;port=3306;dbname=products_db', 'root', '');
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        self::$db = null;
     }
 
     public static function getdBInstance()
     {
-        if (!self::$db) {
+        if (!isset(self::$db)) {
             self::$db = new Database();
         }
         return self::$db;
