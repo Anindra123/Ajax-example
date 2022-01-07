@@ -23,8 +23,15 @@ class Database
         return self::$db;
     }
 
-    public function getAllProducts()
+    public function getAllProducts(string $searchProduct = '')
     {
+        if ($searchProduct) {
+            $statement = $this->pdo->prepare("select * from products_tbl where title like '%':t'%'");
+            $statement->bindValue(':t', $searchProduct);
+            $statement->execute();
+            $sProducts = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $sProducts;
+        }
         $statement = $this->pdo->prepare("select * from products_tbl");
         $statement->execute();
         $products = $statement->fetchAll(PDO::FETCH_ASSOC);

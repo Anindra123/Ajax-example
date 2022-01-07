@@ -11,6 +11,7 @@
 
 <body>
     <?php echo $content ?>
+    <script src="/scripts/script.js"></script>
 </body>
 
 </html>

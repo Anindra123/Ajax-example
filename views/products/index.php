@@ -1,10 +1,17 @@
 <h1>Products search</h1>
 <hr>
 <br>
-<form action="" method="get">
-    <input type="text" name="search">
-    <button type="submit">Search Product</button>
-</form>
+<div id="searchContainer">
+    <form>
+        <input type="text" name="search" id="searchProduct">
+        <button type="submit" id="searchSubmit">Search Product</button>
+    </form>
+    <div id="dropDown">
+        <?php echo '<pre>';
+        var_dump($sProducts);
+        echo '</pre>'; ?>
+    </div>
+</div>
 <br>
 <table>
     <tr>

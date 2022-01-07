@@ -15,3 +15,17 @@ body{
 table, tr, th, td{
     border: 2px solid black;
 }
+
+#searchContainer{
+    position: relative;
+    display: inline-block;
+    border: 2px solid turquoise;
+}
+#dropDown{
+    background-color: blue;
+    position:absolute;
+    z-index: 1;
+}
+#dropDown a{
+    display: block;
+}
