@@ -19,13 +19,22 @@ table, tr, th, td{
 #searchContainer{
     position: relative;
     display: inline-block;
-    border: 2px solid turquoise;
 }
 #dropDown{
-    background-color: blue;
+    display:none;
+    background-color: #f6f6f6;
     position:absolute;
     z-index: 1;
+    min-width: 230px;
+    border: 1px solid #ddd;
 }
 #dropDown a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
     display: block;
+}
+
+#dropDown a:hover {
+    background-color: #e2e2e2;
 }

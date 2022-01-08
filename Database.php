@@ -26,7 +26,7 @@ class Database
     public function getAllProducts(string $searchProduct = '')
     {
         if ($searchProduct) {
-            $statement = $this->pdo->prepare("select * from products_tbl where title like '%':t'%'");
+            $statement = $this->pdo->prepare("select * from products_tbl where title like concat('%',:t,'%')");
             $statement->bindValue(':t', $searchProduct);
             $statement->execute();
             $sProducts = $statement->fetchAll(PDO::FETCH_ASSOC);

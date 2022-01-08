@@ -47,4 +47,11 @@ class Router
         $content = ob_get_clean();
         include_once __DIR__ . "/views/_layout.php";
     }
+    public function RenderAjax($view, $parameter = [])
+    {
+        foreach ($parameter as $key => $value) {
+            $$key = $value;
+        }
+        include_once __DIR__ . "/views/$view.php";
+    }
 }

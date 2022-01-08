@@ -9,18 +9,20 @@ class ProductsController
 
     public static function index(Router $router)
     {
-        $search = $_GET["search"] ?? '';
-        $sProducts = '';
+        $search = $_GET['keyword'] ?? '';
         if ($search) {
             $sProducts = $router->db->getAllProducts($search);
-        }
-        $products = $router->db->getAllProducts();
-        $router->RenderView(
-            'products/index',
-            [
-                'products' => $products,
+            $router->RenderAjax('partials/search', [
                 'sProducts' => $sProducts
-            ]
-        );
+            ]);
+        } else {
+            $products = $router->db->getAllProducts();
+            $router->RenderView(
+                'products/index',
+                [
+                    'products' => $products
+                ]
+            );
+        }
     }
 }

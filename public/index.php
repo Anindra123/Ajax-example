@@ -10,5 +10,4 @@ $router = new Router();
 $router->get('/', [ProductsController::class, 'index']);
 $router->get('/products', [ProductsController::class, 'index']);
 
-
 $router->resolve();
